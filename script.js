@@ -338,4 +338,3 @@ async function deleteRegistration(docId) {
         showMessage('ناکام', 'اندراج ڈیلیٹ کرنے میں مسئلہ پیش آیا۔', true);
     }
 }
-
