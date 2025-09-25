@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             setupRealtimeListener();
             setupQRListeners();
             setupMainImageListeners();
+            setupAdminLoginListeners();
         } catch (error) {
             console.error("Firebase initialization or sign-in failed:", error);
         }
@@ -260,16 +261,18 @@ window.onclick = function(event) {
     }
 }
 
-document.getElementById('admin-login-btn').addEventListener('click', () => {
-    const password = prompt("ایڈمن پاس ورڈ درج کریں");
-    if (password === "admin123") {
-        document.getElementById('admin-login-form').classList.add('hidden');
-        document.getElementById('admin-panel-content').classList.remove('hidden');
-        showMessage('ایڈمن پینل', 'آپ ایڈمن پینل میں لاگ ان ہو گئے ہیں۔');
-    } else {
-        showMessage('غلط پاس ورڈ', 'براہ کرم صحیح پاس ورڈ درج کریں۔', true);
-    }
-});
+function setupAdminLoginListeners() {
+    document.getElementById('admin-login-btn').addEventListener('click', () => {
+        const password = prompt("ایڈمن پاس ورڈ درج کریں");
+        if (password === "admin123") {
+            document.getElementById('admin-login-form').classList.add('hidden');
+            document.getElementById('admin-panel-content').classList.remove('hidden');
+            showMessage('ایڈمن پینل', 'آپ ایڈمن پینل میں لاگ ان ہو گئے ہیں۔');
+        } else {
+            showMessage('غلط پاس ورڈ', 'براہ کرم صحیح پاس ورڈ درج کریں۔', true);
+        }
+    });
+}
 
 function updateAdminPanel(docs) {
     const tableBody = document.getElementById('registrations-table-body');
