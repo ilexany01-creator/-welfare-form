@@ -10,22 +10,27 @@ import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://w
 
 // Global variables provided by the Canvas environment.
 const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDm1la2IvhjrXIMUR39QLrOpkkZRW66s08",
+  authDomain: "welfare-form-72160.firebaseapp.com",
+  projectId: "welfare-form-72160",
+  storageBucket: "welfare-form-72160.appspot.com",
+  messagingSenderId: "441033441257",
+  appId: "1:441033441257:web:80bf6daa99bbc86ee31578"
+};
+
 const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
 
-// The hardcoded password has been removed from a visible variable.
-// It is now directly in the code, which is still not secure for real websites, but better for a quick demo.
-
 let app, db, auth, storage;
-let userId = ''; // User ID, set after authentication.
+let userId = '';
 
-// Global state for modals
 const modalState = {
     successModal: document.getElementById('success-modal'),
     messageModal: document.getElementById('message-modal'),
 };
 
-// Function to show a generic message modal
 function showMessage(title, message, isError = false) {
     const modal = modalState.messageModal;
     const titleElem = modal.querySelector('#message-title');
@@ -39,27 +44,23 @@ function showMessage(title, message, isError = false) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    // Check if Firebase configuration is available
     if (Object.keys(firebaseConfig).length > 0) {
         try {
-            // Initialize Firebase services
             app = initializeApp(firebaseConfig);
             db = getFirestore(app);
             auth = getAuth(app);
             storage = getStorage(app);
 
-            // Set up authentication state listener
             onAuthStateChanged(auth, (user) => {
                 if (user) {
                     userId = user.uid;
                     console.log(`Authenticated as user with UID: ${userId}`);
                 } else {
-                    userId = crypto.randomUUID(); // Fallback for anonymous user
+                    userId = crypto.randomUUID();
                     console.log("No user signed in, using random UUID.");
                 }
             });
 
-            // Sign in user based on the provided token or anonymously
             if (initialAuthToken) {
                 await signInWithCustomToken(auth, initialAuthToken);
                 console.log("Firebase signed in with custom token.");
@@ -68,7 +69,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 console.log("Firebase signed in anonymously.");
             }
 
-            // Set up real-time listeners for public data
             setupRealtimeListener();
             setupQRListeners();
             setupMainImageListeners();
@@ -80,7 +80,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-// --- Firebase Storage Helper Functions ---
 async function uploadFileToStorage(file, path) {
     if (!storage) throw new Error("Firebase Storage is not initialized.");
     const storageRef = ref(storage, `/artifacts/${appId}/public/images/${path}`);
@@ -104,9 +103,7 @@ async function uploadFileToStorage(file, path) {
         );
     });
 }
-// ----------------------------------------
 
-// --- Firestore Real-time Listeners ---
 function setupRealtimeListener() {
     if (!db || !auth) return;
     const collectionPath = `/artifacts/${appId}/public/data/registrations`;
@@ -148,9 +145,7 @@ function setupMainImageListeners() {
         }
     });
 }
-// ----------------------------------------
 
-// --- Event Listeners ---
 document.getElementById('submit-btn').addEventListener('click', async (event) => {
     event.preventDefault();
     const transactionIdInput = document.getElementById('transaction_id');
@@ -256,7 +251,6 @@ document.getElementById('check-payment-btn').addEventListener('click', async () 
     }
 });
 
-// --- Modal closing logic ---
 window.onclick = function(event) {
     if (event.target === modalState.successModal) {
         modalState.successModal.style.display = "none";
@@ -266,9 +260,7 @@ window.onclick = function(event) {
     }
 }
 
-// --- New Admin Panel Functions ---
 document.getElementById('admin-login-btn').addEventListener('click', () => {
-    // Show a password prompt instead of using an input field
     const password = prompt("ایڈمن پاس ورڈ درج کریں");
     if (password === "admin123") {
         document.getElementById('admin-login-form').classList.add('hidden');
