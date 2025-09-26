@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,69 +10,122 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        body {
+            font-family: "Noto Nastaliq Urdu", serif;
+            direction: rtl;
+        }
+
+        .english-text {
+            direction: ltr;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .admin-table-container {
+            max-height: 500px;
+            overflow-y: auto;
+            border-radius: 8px;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
+
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500">
 
     <header class="bg-blue-600 dark:bg-blue-800 text-white shadow-md p-4 text-center">
-        <h1 class="text-3xl font-bold">فلاحی رجسٹریشن فارم</h1>
-        <p class="mt-2 text-lg english-text">Welfare Registration Form</p>
-        <p class="mt-2 text-lg">غریب، مزدور اور سیلاب سے متاثرہ افراد کے لیے</p>
-        <p class="text-sm english-text">For the poor, laborers, and flood victims</p>
+        [span_0](start_span)<h1 class="text-3xl font-bold">فلاحی رجسٹریشن فارم[span_0](end_span)</h1>
+        [span_1](start_span)<p class="mt-2 text-lg english-text">Welfare Registration Form[span_1](end_span)</p>
+        [span_2](start_span)<p class="mt-2 text-lg">غریب مزدور اور سیلاب سے متاثرہ افراد کے لیے[span_2](end_span)</p>
+        [span_3](start_span)<p class="text-sm english-text">For the poor, laborers, and flood victims[span_3](end_span)</p>
     </header>
 
     <section class="container mx-auto mt-8 p-4 text-center">
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-            <h2 class="text-2xl font-bold mb-4">رجسٹریشن کی معلومات | Registration Information</h2>
+            <h2 class="text-2xl font-bold mb-4">رجسٹریشن کی معلومات | [span_4](start_span)Registration Information[span_4](end_span)</h2>
             <p id="registration-count" class="text-3xl font-extrabold text-blue-600 dark:text-blue-400">0</p>
-            <p class="text-lg mb-4">افراد رجسٹرڈ ہو چکے ہیں | Individuals have registered</p>
-            <p class="text-xl font-bold text-green-600 dark:text-green-400 mt-4">یہ امداد 500,000 خاندانوں کے لیے ہے</p>
-            <p class="english-text text-sm text-green-600 dark:text-green-400">This aid is for 500,000 families</p>
+            <p class="text- mb-4">افراد رجسٹرڈ ہو چکے ہیں | Individuals have registered</p>
+            [span_5](start_span)<p class="text-xl font-bold text-green-600 dark:text-green-400">یہ امداد 500,000 خاندانوں کے لیے ہے[span_5](end_span)</p>
+            [span_6](start_span)<p class="english-text text-sm text-green-600 dark:text-green-400">This aid is for 500,000 families[span_6](end_span)</p>
         </div>
     </section>
 
     <section class="container mx-auto mt-8 p-4">
-        <h2 class="text-2xl font-bold text-center mb-6">متاثرہ افراد | Affected Individuals</h2>
+        <h2 class="text-2xl font-bold text-center mb-6">متاثرہ افراد | [span_7](start_span)Affected Individuals[span_7](end_span)</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4">
                 <img id="main-img-1" src="https://placehold.co/400x300/5A67D8/FFFFFF?text=Flood+Victims" alt="سیلاب متاثرین" class="w-full h-48 object-cover rounded-lg mb-4">
-                <p class="text-center">سیلاب متاثرین</p>
+                [span_8](start_span)<p class="text-center">سیلاب متاثرین[span_8](end_span)</p>
             </div>
+
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4">
                 <img id="main-img-2" src="https://placehold.co/400x300/48BB78/FFFFFF?text=Poor+Laborers" alt="غریب مزدور" class="w-full h-48 object-cover rounded-lg mb-4">
-                <p class="text-center">غریب مزدور</p>
+                [span_9](start_span)<p class="text-center">غریب مزدور[span_9](end_span)</p>
             </div>
+
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4">
                 <img id="main-img-3" src="https://placehold.co/400x300/ED8936/FFFFFF?text=Widows" alt="بیوہ عورتوں" class="w-full h-48 object-cover rounded-lg mb-4">
-                <p class="text-center">بیوہ عورتوں</p>
+                [span_10](start_span)<p class="text-center">بیوہ عورتوں[span_10](end_span)</p>
             </div>
+
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4">
                 <img id="main-img-4" src="https://placehold.co/400x300/E53E3E/FFFFFF?text=Poor+Children" alt="غریب بچے" class="w-full h-48 object-cover rounded-lg mb-4">
                 <p class="text-center">غریب بچے</p>
             </div>
+
         </div>
     </section>
 
     <section class="container mx-auto mt-8 p-4">
         <div class="max-w-xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
             <h2 class="text-2xl font-bold text-center mb-6">رجسٹریشن فارم | Registration Form</h2>
+
             <form id="registration-form">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="col-span-1 md:col-span-2">
                         <h3 class="font-bold mb-2">ذاتی معلومات | Personal Information</h3>
                     </div>
+
                     <div class="mb-4">
-                        <label for="name" class="block text-gray-700 dark:text-gray-300">پورا نام | Full Name:</label>
-                        <input type="text" id="name" name="name" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" placeholder="اپنا پورا نام درج کریں | Enter your full name" required>
+                        <label for="name" class="block text-gray-700 dark:text-gray-300">پورا نام | [span_11](start_span)Full Name:</label>[span_11](end_span)
+                        [span_12](start_span)<input type="text" id="name" name="name" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" placeholder="اپنا پورا نام درج کریں | Enter your full name" required>[span_12](end_span)
                     </div>
+
                     <div class="mb-4">
-                        <label for="cnic" class="block text-gray-700 dark:text-gray-300">شناختی کارڈ نمبر | CNIC Number:</label>
-                        <input type="text" id="cnic" name="cnic" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" placeholder="مثال: XXXXX-XXXXXXX-X | Example: XXXXX-XXXXXXX-X" required>
+                        <label for="cnic" class="block text-gray-700 dark:text-gray-300">شناختی کارڈ نمبر | [span_13](start_span)CNIC Number:</label>[span_13](end_span)
+                        <input type="text" id="cnic" name="cnic" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" placeholder="مثال XXXXX-XXXXXXX-X | Example: XXXXX-XXXXXXX-X" required>
                     </div>
+
                     <div class="mb-4">
                         <label for="phone" class="block text-gray-700 dark:text-gray-300">فون نمبر | Phone Number:</label>
                         <input type="tel" id="phone" name="phone" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" placeholder="فون نمبر درج کریں | Enter phone number" required>
                     </div>
+
                     <div class="mb-4">
                         <label for="dob" class="block text-gray-700 dark:text-gray-300">تاریخ پیدائش | Date of Birth:</label>
                         <input type="date" id="dob" name="dob" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200">
@@ -80,14 +134,17 @@
                     <div class="col-span-1 md:col-span-2 mt-4">
                         <h3 class="font-bold mb-2">رہائشی معلومات | Residential Information</h3>
                     </div>
+
                     <div class="mb-4">
                         <label for="province" class="block text-gray-700 dark:text-gray-300">صوبہ | Province:</label>
                         <input type="text" id="province" name="province" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" placeholder="صوبے کا نام | Province Name">
                     </div>
+
                     <div class="mb-4">
                         <label for="district" class="block text-gray-700 dark:text-gray-300">ضلع | District:</label>
                         <input type="text" id="district" name="district" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" placeholder="ضلع کا نام | District Name">
                     </div>
+
                     <div class="col-span-1 md:col-span-2 mb-4">
                         <label for="address" class="block text-gray-700 dark:text-gray-300">مکمل پتہ | Full Address:</label>
                         <textarea id="address" name="address" rows="3" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" placeholder="اپنا مکمل پتہ درج کریں | Enter your full address"></textarea>
@@ -96,14 +153,17 @@
                     <div class="col-span-1 md:col-span-2 mt-4">
                         <h3 class="font-bold mb-2">آمدنی اور حیثیت | Income & Status</h3>
                     </div>
+
                     <div class="mb-4">
                         <label for="occupation" class="block text-gray-700 dark:text-gray-300">پیشہ | Occupation:</label>
                         <input type="text" id="occupation" name="occupation" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" placeholder="اپنا پیشہ درج کریں | Enter your occupation">
                     </div>
+
                     <div class="mb-4">
                         <label for="income" class="block text-gray-700 dark:text-gray-300">ماہانہ آمدنی | Monthly Income:</label>
                         <input type="number" id="income" name="income" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" placeholder="روپے میں ماہانہ آمدنی | Monthly income in PKR">
                     </div>
+
                     <div class="col-span-1 md:col-span-2 mb-4">
                         <label for="status" class="block text-gray-700 dark:text-gray-300">موجودہ حیثیت | Current Status:</label>
                         <select id="status" name="status" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200">
@@ -114,46 +174,55 @@
                             <option value="other">دیگر | Other</option>
                         </select>
                     </div>
-                    
+
                     <div class="col-span-1 md:col-span-2 mt-4">
                         <h3 class="font-bold mb-2">تصاویر اور بینک تفصیلات | Images & Bank Details</h3>
                     </div>
+
                     <div class="col-span-1 md:col-span-2 mb-4">
                         <label for="damaged_house_images" class="block text-gray-700 dark:text-gray-300">ڈیمج گھر کی تصاویر | Images of Damaged House:</label>
                         <input type="file" id="damaged_house_images" name="damaged_house_images" multiple accept="image/*" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200">
-                        <small class="text-gray-500 dark:text-gray-400">اپنے ڈیمج گھر کی تصاویر اپ لوڈ کریں۔ | Upload images of your damaged house.</small>
+                        <small class="text-gray-500 dark:text-gray-400">اپنے ڈیمج گھر کی تصاویر آپ لوڈ کریں۔ | Upload images of your damaged house.</small>
                     </div>
+
                     <div class="col-span-1 md:col-span-2 mb-4">
                         <label for="cnic_front" class="block text-gray-700 dark:text-gray-300">شناختی کارڈ کی فرنٹ پکچر | CNIC Front Picture:</label>
                         <input type="file" id="cnic_front" name="cnic_front" accept="image/*" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200">
                     </div>
+
                     <div class="col-span-1 md:col-span-2 mb-4">
                         <label for="cnic_back" class="block text-gray-700 dark:text-gray-300">شناختی کارڈ کی بیک پکچر | CNIC Back Picture:</label>
                         <input type="file" id="cnic_back" name="cnic_back" accept="image/*" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200">
                     </div>
+
                     <div class="col-span-1 md:col-span-2 p-2 border border-blue-400 rounded-md bg-blue-50 dark:bg-blue-900 mb-4 text-blue-800 dark:text-blue-200">
                         <p class="font-bold text-center">آپ کی امداد جو دی گئی ہے وہ آپ کے اس بینک اکاؤنٹ نمبر میں ہی آئے گی اور ہر 6 مہینے کے بعد دو لاکھ روپے دیے جائیں گے۔</p>
                         <p class="english-text text-center text-sm mt-1">The provided aid will be sent to this bank account number, and an amount of two lakh rupees will be given every 6 months.</p>
                     </div>
+
                     <div class="mb-4">
                         <label for="bank_name" class="block text-gray-700 dark:text-gray-300">بینک کا نام | Bank Name:</label>
                         <input type="text" id="bank_name" name="bank_name" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" placeholder="بینک کا نام درج کریں | Enter bank name">
                     </div>
+
                     <div class="mb-4">
                         <label for="account_number" class="block text-gray-700 dark:text-gray-300">اکاؤنٹ نمبر | Account Number:</label>
                         <input type="text" id="account_number" name="account_number" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" placeholder="اکاؤنٹ نمبر درج کریں | Enter account number">
                     </div>
+
                 </div>
 
                 <div class="col-span-1 md:col-span-2 mt-6 p-4 border-t border-gray-300 dark:border-gray-600">
                     <h3 class="font-bold mb-2">فارم کی فیس | Form Fee</h3>
-                    <p class="text-lg text-red-600 dark:text-red-400 font-bold mb-2">فیس: 3170 پاکستانی روپے | Fee: PKR 3170</p>
+                    <p class="text-lg text-red-600 dark:text-red-400 font-bold">فیس: PKR 3170 پاکستانی روپے | Fee: PKR 3170</p>
                     <p class="text-gray-700 dark:text-gray-300 mb-4">اس فارم کو جمع کروانے کے لیے 3170 پاکستانی روپے کی ناقابل واپسی فیس ادا کرنا لازمی ہے۔ براہ کرم اپنی فیس ادا کرنے کے بعد یہاں ٹرانزیکشن کا ثبوت شامل کریں۔</p>
                     <p class="text-sm english-text text-gray-500 dark:text-gray-400">A non-refundable fee of PKR 3170 is required to submit this form. Please attach proof of transaction here after paying your fee.</p>
+
                     <div class="mb-4 mt-4">
                         <label for="transaction_id" class="block text-gray-700 dark:text-gray-300">ٹرانزیکشن آئی ڈی | Transaction ID:</label>
                         <input type="text" id="transaction_id" name="transaction_id" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" placeholder="ٹرانزیکشن آئی ڈی درج کریں | Enter transaction ID">
                     </div>
+
                     <div class="mb-4">
                         <label for="payment_proof" class="block text-gray-700 dark:text-gray-300">ادائیگی کا ثبوت | Payment Proof:</label>
                         <input type="file" id="payment_proof" name="payment_proof" accept="image/*, .pdf" class="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200">
@@ -161,6 +230,7 @@
                     </div>
                 </div>
             </form>
+
         </div>
     </section>
 
@@ -168,29 +238,30 @@
         <h2 class="text-2xl font-bold mb-4">مالی معاونت | Financial Aid</h2>
         <p class="text-lg mb-4">آپ اپنی مالی معاونت ان QR کوڈز کو اسکین کر کے بھیج سکتے ہیں۔</p>
         <p class="text-md mb-4 english-text">You can send your financial aid by scanning these QR codes.</p>
+
         <div class="bg-white dark:bg-gray-800 inline-block p-6 rounded-lg shadow-md grid grid-cols-2 gap-6">
             <div class="p-2 border rounded-md border-gray-300 dark:border-gray-600">
-                <p class="mb-2">کیو آر کوڈ 1</p>
-                <img id="qr-1" src="https://placehold.co/150x150/5A67D8/FFFFFF?text=QR+Code+1" alt="کیو آر کوڈ 1" class="w-full h-auto">
+                <p class="mb-2">1 کیو آر کوڈ</p>
+                <img id="qr-1" src="https://placehold.co/150x150/5A67D8/FFFFFF?text=QR+Code+1" alt="1 کیو آر کوڈ" class="w-full h-auto">
             </div>
             <div class="p-2 border rounded-md border-gray-300 dark:border-gray-600">
-                <p class="mb-2">کیو آر کوڈ 2</p>
-                <img id="qr-2" src="https://placehold.co/150x150/48BB78/FFFFFF?text=QR+Code+2" alt="کیو آر کوڈ 2" class="w-full h-auto">
+                <p class="mb-2">2 کیو آر کوڈ</p>
+                <img id="qr-2" src="https://placehold.co/150x150/48BB78/FFFFFF?text=QR+Code+2" alt="2 کیو آر کوڈ" class="w-full h-auto">
             </div>
             <div class="p-2 border rounded-md border-gray-300 dark:border-gray-600">
-                <p class="mb-2">کیو آر کوڈ 3</p>
-                <img id="qr-3" src="https://placehold.co/150x150/ED8936/FFFFFF?text=QR+Code+3" alt="کیو آر کوڈ 3" class="w-full h-auto">
+                <p class="mb-2">3 کیو آر کوڈ</p>
+                <img id="qr-3" src="https://placehold.co/150x150/ED8936/FFFFFF?text=QR+Code+3" alt="3 کیو آر کوڈ" class="w-full h-auto">
             </div>
             <div class="p-2 border rounded-md border-gray-300 dark:border-gray-600">
-                <p class="mb-2">کیو آر کوڈ 4</p>
-                <img id="qr-4" src="https://placehold.co/150x150/E53E3E/FFFFFF?text=QR+Code+4" alt="کیو آر کوڈ 4" class="w-full h-auto">
+                <p class="mb-2">4 کیو آر کوڈ</p>
+                <img id="qr-4" src="https://placehold.co/150x150/E53E3E/FFFFFF?text=QR+Code+4" alt="4 کیو آر کوڈ" class="w-full h-auto">
             </div>
         </div>
+
     </section>
 
     <div id="error-message" class="hidden container mx-auto p-4 text-center text-red-600 dark:text-red-400 font-bold">
-        برائے مہربانی ٹرانزیکشن آئی ڈی اور فیس کی رسید ضرور اپ لوڈ کریں۔
-        <br>
+        برائے مہربانی ٹرانزیکشن آئی ڈی اور فیس کی رسید ضرور اپ لوڈ کریں۔ <br>
         <span class="english-text text-sm">Please provide the transaction ID and upload a picture of the payment proof.</span>
     </div>
 
@@ -204,29 +275,28 @@
         <div class="max-w-xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
             <h2 class="text-2xl font-bold mb-4">ادائیگی کی حیثیت چیک کریں | Check Payment Status</h2>
             <div class="mb-4">
-                <label for="check-cnic" class="block text-gray-700 dark:text-gray-300 mb-2">شناختی کارڈ نمبر درج کریں | Enter CNIC Number:</label>
+                <label for="check-cnic" class="block text-gray-700 dark:text-gray-300 mb-2">شناختی کارڈ نمبر درج کریں | Enter CNIC Number: </label>
                 <input type="text" id="check-cnic" class="p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" placeholder="XXXXX-XXXXXXX-X">
             </div>
             <button id="check-payment-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition-transform transform hover:scale-105">
                 چیک کریں | Check
             </button>
             <div id="payment-check-result" class="mt-4 p-4 rounded-md border-dashed border-2 border-gray-400 dark:border-gray-600 text-right">
-                </div>
+            </div>
         </div>
     </section>
-    
-    <!-- --- Admin Section --- -->
+
     <section id="admin-section" class="container mx-auto mt-8 p-4">
         <div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
             <h2 class="text-2xl font-bold text-center mb-6">ایڈمن پینل | Admin Panel</h2>
-            
+
             <div id="admin-login-form">
                 <p class="mb-4 text-red-500 font-bold">یہ حصہ صرف ایڈمن کے لیے ہے۔</p>
                 <button id="admin-login-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full mt-4">
                     لاگ ان | Log In
                 </button>
             </div>
-            
+
             <div id="admin-panel-content" class="hidden">
                 <div class="admin-table-container">
                     <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
@@ -234,18 +304,18 @@
                             <tr>
                                 <th class="px-6 py-3 text-right text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">نام</th>
                                 <th class="px-6 py-3 text-right text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">شناختی کارڈ نمبر</th>
-                                <th class="px-6 py-3 text-right text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">آمدنی</th>
+                                <th class="px-6 py-3 text-right text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">ٹرانزیکشن آئی ڈی</th>
                                 <th class="px-6 py-3 text-right text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">حیثیت</th>
                                 <th class="px-6 py-3 text-right text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">ادائیگی</th>
                                 <th class="px-6 py-3 text-right text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">کارروائی</th>
                             </tr>
                         </thead>
                         <tbody id="registrations-table-body" class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
-                            <!-- Data will be inserted here by JavaScript -->
-                        </tbody>
+                            </tbody>
                     </table>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -254,13 +324,13 @@
     </a>
 
     <footer class="bg-gray-800 dark:bg-gray-900 text-gray-300 dark:text-gray-400 p-4 text-center mt-8">
-        <p>&copy; 2024 فلاحی تنظیم. جملہ حقوق محفوظ ہیں۔</p>
+        <p>&copy; 2024 فلاحی تنظیم جملہ حقوق محفوظ ہیں۔</p>
         <p class="english-text">&copy; 2024 Welfare Organization. All rights reserved.</p>
     </footer>
-    
+
     <div id="success-modal" class="modal">
         <div class="modal-content dark:bg-gray-800 dark:text-gray-100">
-            <h4 class="text-2xl font-bold mb-4">شکریہ! | Thank You!</h4>
+            <h4 class="text-2xl font-bold mb-4">شکریہ ! | Thank You!</h4>
             <p>آپ کا فارم کامیابی سے جمع ہو گیا ہے۔ فیس کی تصدیق کے بعد آپ سے رابطہ کیا جائے گا۔</p>
             <p class="english-text">Your form has been submitted successfully. You will be contacted after the fee is verified.</p>
             <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded" onclick="document.getElementById('success-modal').style.display='none'">بند کریں</button>
@@ -274,6 +344,323 @@
             <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded" onclick="document.getElementById('message-modal').style.display='none'">بند کریں</button>
         </div>
     </div>
-    <script type="module" src="script.js"></script>
-</body>
-</html>
+
+    <script type="module">
+        // Firebase SDK imports
+        import {
+            initializeApp
+        } from "https://www.gstatic.com/G/**/firebase-app.js";
+        import {
+            getAuth,
+            signInWithCustomToken,
+            onAuthStateChanged,
+            signInAnonymously
+        } from "https://www.gstatic.com/G/**/firebase-auth.js";
+        import {
+            getFirestore,
+            doc,
+            addDoc,
+            collection,
+            onSnapshot,
+            query,
+            getDocs,
+            setDoc,
+            updateDoc,
+            deleteDoc,
+            where
+        } from "https://www.gstatic.com/G/**/firebase-firestore.js";
+        import {
+            getStorage,
+            ref,
+            uploadBytesResumable,
+            getDownloadURL
+        } from "https://www.gstatic.com/G/**/firebase-storage.js";
+
+        // VITAL: Firebase Configuration (Provided by user)
+        const firebaseConfig = {
+          apiKey: "AIzaSyDm1la2IvhjrXIMUR39QLrOpkkZRW66s08",
+          authDomain: "welfare-form-72160.firebaseapp.com",
+          projectId: "welfare-form-72160",
+          storageBucket: "welfare-form-72160.firebasestorage.app",
+          messagingSenderId: "441033441257",
+          appId: "1:441033441257:web:80bf6daa99bbc86ee31578"
+        };
+        
+        // VITAL: App ID for Storage and Firestore Paths
+        const appld = "1:441033441257:web:80bf6daa99bbc86ee31578";
+
+        // The initialAuthToken will be null as it was not provided/used
+        const initialAuthToken = null; 
+        
+        let app, db, auth, storage;
+        let userld = ''; // User ID, set after authentication.
+
+        [span_14](start_span)// Global state for modals[span_14](end_span)
+        const modalState = {
+            [span_15](start_span)successModal: document.getElementById('success-modal'),[span_15](end_span)
+            [span_16](start_span)messageModal: document.getElementById('message-modal'),[span_16](end_span)
+        };
+
+        // Function to show a generic message modal
+        function showMessage(title, message, isError = false) {
+            [span_17](start_span)const modal = modalState.messageModal;[span_17](end_span)
+            [span_18](start_span)const titleElem = modal.querySelector('#message-title');[span_18](end_span)
+            [span_19](start_span)const messageElem = modal.querySelector('#message-body');[span_19](end_span)
+
+            [span_20](start_span)titleElem.textContent = title;[span_20](end_span)
+            [span_21](start_span)messageElem.textContent = message;[span_21](end_span)
+            titleElem.className = isError ? [span_22](start_span)'text-2xl font-bold mb-4 text-red-600' : 'text-2xl font-bold mb-4 text-green-600';[span_22](end_span)
+            [span_23](start_span)modal.style.display = 'block';[span_23](end_span)
+        }
+
+        [span_24](start_span)document.addEventListener('DOMContentLoaded', async () => {[span_24](end_span)
+            // Check if Firebase configuration is available
+            [span_25](start_span)if (Object.keys(firebaseConfig).length > 0) {[span_25](end_span)
+                try {
+                    // Initialize Firebase services
+                    [span_26](start_span)app = initializeApp(firebaseConfig);[span_26](end_span)
+                    [span_27](start_span)db = getFirestore(app);[span_27](end_span)
+                    [span_28](start_span)auth = getAuth(app);[span_28](end_span)
+                    [span_29](start_span)storage = getStorage(app);[span_29](end_span)
+
+                    // Set up authentication state listener
+                    [span_30](start_span)onAuthStateChanged(auth, (user) => {[span_30](end_span)
+                        [span_31](start_span)if (user) {[span_31](end_span)
+                            [span_32](start_span)userld = user.uid;[span_32](end_span)
+                            console.log(`Authenticated as user with UID: ${userld}`);
+                        } else {
+                            userld = crypto.randomUUID(); // Fallback for anonymous user
+                            console.log("No user signed in, using random UUID.");
+                        }
+                    });
+
+                    // Sign in user based on the provided token or anonymously
+                    if (initialAuthToken) {
+                        await signInWithCustomToken(auth, initialAuthToken);
+                        console.log("Firebase signed in with custom token.");
+                    } else {
+                        await signInAnonymously(auth);
+                        console.log("Firebase signed in anonymously.");
+                    }
+
+                    // Set up real-time listeners for public data
+                    setupRealtimeListener();
+                    setupQRListeners();
+                    setupMainImageListeners();
+
+                } catch (error) {
+                    console.error("Firebase initialization or sign-in failed:", error);
+                }
+            } else {
+                console.warn("Firebase config not available. Data will not be saved.");
+            }
+        });
+
+        // --- Firebase Storage Helper Functions ---
+        async function uploadFileToStorage(file, path) {
+            if (!storage) throw new Error("Firebase Storage is not initialized.");
+            // NOTE: The path uses the appld variable defined above
+            const storageRef = ref(storage, `/artifacts/${appld}/public/images/${path}`);
+            [span_33](start_span)const uploadTask = uploadBytesResumable(storageRef, file);[span_33](end_span)
+
+            return new Promise((resolve, reject) => {
+                uploadTask.on('state_changed',
+                    (snapshot) => {
+                        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                        console.log('Upload is ' + progress + '% done');
+                    },
+                    (error) => {
+                        console.error("Upload failed:", error);
+                        reject(error);
+                    },
+                    () => {
+                        [span_34](start_span)getDownloadURL(uploadTask.snapshot.ref)[span_34](end_span)
+                            .then((downloadURL) => {
+                                resolve(downloadURL);
+                            });
+                    }
+                );
+            });
+        }
+
+        // --- Firestore Real-time Listeners ---
+        function setupRealtimeListener() {
+            if (!db || !auth) return;
+
+            // NOTE: The path uses the appld variable defined above
+            const collectionPath = `/artifacts/${appld}/public/data/registrations`;
+            const q = query(collection(db, collectionPath));
+
+            [span_35](start_span)onSnapshot(q, (snapshot) => {[span_35](end_span)
+                const count = snapshot.docs.length;
+                document.getElementById('registration-count').textContent = count;
+                updateAdminPanel(snapshot.docs);
+            }, (error) => {
+                console.error("Error listening to collection:", error);
+            });
+        }
+
+        function setupQRListeners() {
+            if (!db) return;
+            // NOTE: The path uses the appld variable defined above
+            const docRef = doc(db, `/artifacts/${appld}/public/data/qr_codes`, 'qr_links');
+            [span_36](start_span)onSnapshot(docRef, (doc) => {[span_36](end_span)
+                if (doc.exists()) {
+                    const data = doc.data();
+                    if (data.qr1) document.getElementById('qr-1').src = data.qr1;
+                    if (data.qr2) document.getElementById('qr-2').src = data.qr2;
+                    if (data.qr3) document.getElementById('qr-3').src = data.qr3;
+                    if (data.qr4) document.getElementById('qr-4').src = data.qr4;
+                }
+            });
+        }
+
+        function setupMainImageListeners() {
+            if (!db) return;
+            // NOTE: The path uses the appld variable defined above
+            const docRef = doc(db, `/artifacts/${appld}/public/data/main_images`, 'image_links');
+            [span_37](start_span)onSnapshot(docRef, (doc) => {[span_37](end_span)
+                if (doc.exists()) {
+                    const data = doc.data();
+                    if (data.img1) document.getElementById('main-img-1').src = data.img1;
+                    if (data.img2) document.getElementById('main-img-2').src = data.img2;
+                    if (data.img3) document.getElementById('main-img-3').src = data.img3;
+                    if (data.img4) document.getElementById('main-img-4').src = data.img4;
+                }
+            });
+        }
+
+        // --- Event Listeners ---
+        document.getElementById('submit-btn').addEventListener('click', async (event) => {
+            event.preventDefault();
+
+            const transactionIdInput = document.getElementById('transaction_id');
+            const paymentProofInput = document.getElementById('payment_proof');
+            const errorMessageDiv = document.getElementById('error-message');
+            const form = document.getElementById('registration-form');
+
+            errorMessageDiv.classList.add('hidden');
+            if (!transactionIdInput.value.trim() || paymentProofInput.files.length === 0) {
+                errorMessageDiv.classList.remove('hidden');
+                return;
+            }
+
+            if (!db) {
+                showMessage('فارم جمع کرانے میں ناکامی', 'Firestore شروع نہیں ہو سکا۔', true);
+                return;
+            }
+
+            showMessage('براه کرم انتظار کریں', 'آپ کا فارم جمع کیا جا رہا ہے...', false);
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            data.timestamp = new Date().toISOString();
+            data.isPaid = false;
+
+            try {
+                const paymentProofFile = paymentProofInput.files[0];
+                const paymentProofPath = `payment_proofs/${Date.now()}_${paymentProofFile.name}`;
+                const paymentProofURL = await uploadFileToStorage(paymentProofFile, paymentProofPath);
+                data.payment_proof_url = paymentProofURL;
+
+                const damagedHouseFiles = document.getElementById('damaged_house_images').files;
+                if (damagedHouseFiles.length > 0) {
+                    const damagedHouseUrls = await Promise.all(Array.from(damagedHouseFiles).map(file => {
+                        const path = `damaged_houses/${Date.now()}_${file.name}`;
+                        return uploadFileToStorage(file, path);
+                    }));
+                    data.damaged_house_images = damagedHouseUrls;
+                }
+
+                const cnicFrontFile = document.getElementById('cnic_front').files[0];
+                if (cnicFrontFile) {
+                    const cnicFrontPath = `cnic_fronts/${Date.now()}_${cnicFrontFile.name}`;
+                    data.cnic_front_url = await uploadFileToStorage(cnicFrontFile, cnicFrontPath);
+                }
+
+                const cnicBackFile = document.getElementById('cnic_back').files[0];
+                if (cnicBackFile) {
+                    const cnicBackPath = `cnic_backs/${Date.now()}_${cnicBackFile.name}`;
+                    data.cnic_back_url = await uploadFileToStorage(cnicBackFile, cnicBackPath);
+                }
+                
+                // NOTE: The path uses the appld variable defined above
+                [span_38](start_span)const docRef = await addDoc(collection(db, `/artifacts/${appld}/public/data/registrations`), data);[span_38](end_span)
+                console.log("Document successfully written with ID:", docRef.id);
+
+                showMessage('شکریہ!', 'آپ کا فارم کامیابی سے جمع ہو گیا ہے۔');
+                form.reset();
+
+            } catch (e) {
+                console.error("Error adding document or uploading image: ", e);
+                showMessage('فارم جمع کرانے میں ناکامی', 'آپ کا فارم جمع نہیں ہو سکا۔ برائے مہربانی دوبارہ کوشش کریں۔', true);
+            }
+        });
+
+        document.getElementById('check-payment-btn').addEventListener('click', async () => {
+            const cnicInput = document.getElementById('check-cnic').value;
+            const resultDiv = document.getElementById('payment-check-result');
+
+            resultDiv.innerHTML = '<p>ڈیٹا چیک کیا جا رہا ہے...</p>';
+
+            if (!db) {
+                console.error("Firestore is not initialized.");
+                return;
+            }
+
+            try {
+                // NOTE: The path uses the appld variable defined above
+                [span_39](start_span)const registrationsCollection = collection(db, `/artifacts/${appld}/public/data/registrations`);[span_39](end_span)
+                [span_40](start_span)const q = query(registrationsCollection, where("cnic", "==", cnicInput));[span_40](end_span)
+                [span_41](start_span)const snapshot = await getDocs(q);[span_41](end_span)
+
+                if (snapshot.empty) {
+                    resultDiv.innerHTML = '<p class="text-red-500">معذرت، اس شناختی کارڈ نمبر کے لیے کوئی اندراج نہیں ملا۔</p>';
+                } else {
+                    const doc = snapshot.docs[0];
+                    const data = doc.data();
+
+                    if (data.isPaid) {
+                        resultDiv.innerHTML = `
+                            <p class="text-green-500 font-bold text-xl">کامیاب! آپ کی فیس کی ادائیگی کی تصدیق ہو گئی ہے۔</p>
+                            <p class="mt-2">نام: ${data.name}</p>
+                            <p>شناختی کارڈ نمبر: ${data.cnic}</p>
+                            <p>ٹرانزیکشن آئی ڈی: ${data.transaction_id}</p>
+                            <div class="mt-4 p-4 border rounded-md">
+                                <p class="font-bold text-center">رجسٹریشن سلپ</p>
+                                <p>نام: ${data.name}</p>
+                                <p>شناختی کارڈ نمبر: ${data.cnic}</p>
+                                <p>ادائیگی کی حیثیت: <span class="text-green-500">Paid</span></p>
+                            </div>
+                        `;
+                    } else {
+                        resultDiv.innerHTML = '<p class="text-yellow-500">آپ کی ادائیگی زیر التوا ہے۔ برائے مہربانی ایڈمن سے رابطہ کریں۔</p>';
+                    }
+                }
+
+            } catch (e) {
+                console.error("Error checking payment status: ", e);
+                resultDiv.innerHTML = '<p class="text-red-500">ڈیٹا چیک کرنے میں کوئی مسئلہ پیش آیا ہے۔</p>';
+            }
+        });
+
+        // --- Modal closing logic ---
+        window.onclick = function(event) {
+            if (event.target === modalState.successModal) {
+                modalState.successModal.style.display = "none";
+            }
+            if (event.target === modalState.messageModal) {
+                modalState.messageModal.style.display = "none";
+            }
+        }
+
+        // --- Admin Panel Functions ---
+        document.getElementById('admin-login-btn').addEventListener('click', () => {
+            [span_42](start_span)// NOTE: The hardcoded password is 'admin123'[span_42](end_span)
+            const password = prompt("ایڈمن پاس ورڈ درج کریں");
+
+            if (password === "admin123") {
+                document.getElementById('admin-login-form').classList.add('hidden');
+                document.getElementById('admin-panel-content').classList.remove('hidden');
+                showMessage('ایڈمن پینل', 'آپ ایڈمن پینل میں لاگ ان ہو گئے ہیں۔');
+         
