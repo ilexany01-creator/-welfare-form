@@ -292,6 +292,11 @@
 
             <div id="admin-login-form">
                 <p class="mb-4 text-red-500 font-bold">یہ حصہ صرف ایڈمن کے لیے ہے۔</p>
+                <div class="mb-4">
+                    <label for="admin-password" class="block text-gray-700 dark:text-gray-300 mb-2">پاس ورڈ | Password:</label>
+                    <input type="password" id="admin-password" class="p-2 w-full max-w-xs border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" placeholder="پاس ورڈ درج کریں">
+                </div>
+                
                 <button id="admin-login-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full mt-4">
                     لاگ ان | Log In
                 </button>
@@ -421,8 +426,7 @@
                         await signInWithCustomToken(auth, initialAuthToken);
                         console.log("Firebase signed in with custom token.");
                     } else {
-                        // The onAuthStateChanged listener above now handles anonymous sign-in, but we can still start it here if needed immediately.
-                        // However, onAuthStateChanged is usually sufficient for handling the user state.
+                        // The onAuthStateChanged listener above handles anonymous sign-in upon app load.
                     }
 
                     // Set up real-time listeners for public data
@@ -476,8 +480,7 @@
             onSnapshot(q, (snapshot) => {
                 const count = snapshot.docs.length;
                 document.getElementById('registration-count').textContent = count;
-                // This will pass the current data to the admin panel function, 
-                // but the panel content will only be visible if user is logged in via the button click.
+                // This will pass the current data to the admin panel function.
                 updateAdminPanel(snapshot.docs);
             }, (error) => {
                 console.error("Error listening to collection:", error);
@@ -640,13 +643,21 @@
 
         // --- Admin Panel Functions ---
         document.getElementById('admin-login-btn').addEventListener('click', () => {
+            const passwordInput = document.getElementById('admin-password');
+            const password = passwordInput.value;
             // NOTE: The hardcoded password is 'admin123'
-            const password = prompt("ایڈمن پاس ورڈ درج کریں");
 
             if (password === "admin123") {
-                document.getElementById('admin-login-form').classList.add('hidden');
-                document.getElementById('admin-panel-content').classList.remove('hidden');
-                showMessage('ایڈمن پینل', 'آپ ایڈمن پینل میں لاگ ان ہو گئے ہیں۔');
+                // Now, after successful password check, we explicitly sign in anonymously to ensure userld is set.
+                signInAnonymously(auth).then((credential) => {
+                    userld = credential.user.uid;
+                    document.getElementById('admin-login-form').classList.add('hidden');
+                    document.getElementById('admin-panel-content').classList.remove('hidden');
+                    showMessage('ایڈمن پینل', 'آپ ایڈمن پینل میں لاگ ان ہو گئے ہیں۔');
+                }).catch((error) => {
+                    console.error("Anonymous sign-in failed after password check:", error);
+                    showMessage('ناکام', 'لاگ اِن میں مسئلہ پیش آیا۔ دوبارہ کوشش کریں۔', true);
+                });
             } else {
                 showMessage('غلط پاس ورڈ', 'براہ کرم صحیح پاس ورڈ درج کریں۔', true);
             }
